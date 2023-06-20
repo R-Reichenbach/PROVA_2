@@ -1,42 +1,39 @@
 <?php
 
-    include("conexao.php");
+    include('conexao.php');
     
+    $id_caixa = $_POST['id_caixa'];
     $data = $_POST['data'];
     $tipo = $_POST['tipo'];
     $valor = $_POST['valor'];
     $historico = $_POST['historico'];
     $cheque = $_POST['cheque'];
-    
 
-    $sql = "INSERT INTO VALUES fluxo_caixa (data, tipo, valor, historico, cheque)";
+    echo "<h1>Alteração de dados</h1>";
+    echo "<p>Caixa: $id_caixa</p>";
+    {
+        $sql = "UPDATE fluxo_caixa SET 
+            nome_usuario='$nome',
+            email_usuario='$email',
+            fone_usuario='$telefone',
+            senha='$senha'
+            WHERE id_usuario=$id_usuario";
+    }else{
+        $sql = "UPDATE usuario SET z
+            nome_usuario='$nome',            
+            email_usuario='$email',
+            fone_usuario='$telefone',
+            senha='$senha',
+            foto = '$nome_foto'
+            WHERE id_usuario=$id_usuario";
+    }
 
-    $sql .= " VALUES ('".$data."', '".$tipo."', '".$valor."', '".$historico."', '".$cheque."')";
-
-    echo $sql. "<br>";
+    echo $sql;
     $result = mysqli_query($con, $sql);
     if($result)
-    echo "Dados cadastrados com sucesso!";
+        echo "Dados alterados com sucesso!<br>";
     else
-    echo "Erro ao tentar cadastrar!";
-  
-    echo "<h3>Dados do Caixa";
-    echo "<hr>";
-    echo "data: $data <br>";
-    echo "tipo: $tipo <br>";
-    echo "valor: $valor <br>";
-    echo "historico: $historico <br>";
-    echo "cheque: $cheque <br>";
-
-    $sql = "INSERT INTO fluxo_caixa (data, tipo, valor, historico, cheque)";
-
-    $sql .= " VALUES ('".$data."', '".$tipo."', '".$valor."', '".$historico."', '".$cheque."')";
-
-    echo $sql. "<br>";
-    $result = mysqli_query($con, $sql);
-    if($result)
-    echo "Dados cadastrados com sucesso!";
-    else
-    echo "Erro ao tentar cadastrar!";
+        echo "Erro ao alterar dados: ".mysqli_error($con)."!";
 
 ?>
+        <a href="index.php">Voltar</a>;
