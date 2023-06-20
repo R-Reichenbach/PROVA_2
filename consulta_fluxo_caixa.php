@@ -1,22 +1,23 @@
 <?php
 
     include('conexao.php');
-    $tipo= $_POST['tipo'];
-    $sql = "SELECT id_caixa from fluxo_caixa";
-    $result = mysqli_query($con,$sql);
-    $row = mysqli_fetch_array($result);
+    $id_caixa = $_GET['id_caixa'];
+    $tipo = $_POST['tipo'];
 
-   
 
-    if($tipo == 'entrada'){
+    if($tipo == 'total_entradas'){
         $sql = "select sum(valor) valor from fluxo_caixa where tipo = 'entrada' ";
-    } else if ($tipo == 'saida'){
+    } else if ($tipo == 'total_saida'){
         $sql = "select sum(valor) valor from fluxo_caixa where tipo = 'saida' ";
-    }else if($tipo == 'saldo') {
+    }else if($tipo == 'saldo_total') {
         $sql= "select sum(case when tipo = 'entrada' then valor else 0 end) - 
                       sum(case when tipo = 'saida' then valor else 0 end) as valor
                       from fluxo_caixa  ";
     } 
+
+    include('conexao.php');
+
+    $result = mysqli_query($con, $sql);
 
 
 ?>
