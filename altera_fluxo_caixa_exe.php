@@ -10,24 +10,15 @@
     $cheque = $_POST['cheque'];
 
     echo "<h1>Alteração de dados</h1>";
-    echo "<p>Caixa: $data</p>";
-    if($nome_foto == ""){
+
         $sql = "UPDATE fluxo_caixa SET 
             data='$data',
             tipo='$tipo',
             valor='$valor',
             historico='$historico',
             cheque='$cheque'
-            WHERE id_caixa=$id_caixa";
-    }else{
-        $sql = "UPDATE fluxo_caixa SET 
-            nome_usuario='$nome',            
-            email_usuario='$email',
-            fone_usuario='$telefone',
-            senha='$senha',
-            foto = '$nome_foto'
-            WHERE id_usuario=$id_usuario";
-    }
+
+            WHERE id_caixa='$id_caixa'";
 
     echo $sql;
     $result = mysqli_query($con, $sql);

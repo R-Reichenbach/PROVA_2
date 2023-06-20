@@ -1,6 +1,6 @@
 <?php 
     include('conexao.php');
-    $id_caixa = $_POST['id_caixa'];
+    $id_caixa = $_GET['id_caixa'];
     $sql = "delete from fluxo_caixa where id_caixa = '$id_caixa'";
 
     echo "<br>";

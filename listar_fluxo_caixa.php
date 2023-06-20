@@ -29,8 +29,7 @@
             <?php
                 do{
                     echo "<tr>";
-                    echo "<td>".$row['id_caixa']."</td>";
-                    
+                    echo "<td>".$row['id_caixa']."</td>";                    
                     echo "<td>".$row['data']."</td>";
                     echo "<td>".$row['tipo']."</td>";
                     echo "<td>".$row['valor']."</td>";
