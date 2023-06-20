@@ -28,7 +28,7 @@
     echo "historico: $historico <br>";
     echo "cheque: $cheque <br>";
 
-    $sql = "INSERT INTO fluxo_caixa (data, tipo, valor, historico, cheque)";
+    $sql = "INSERT INTO fluxo_caixa (id_caixa, data, tipo, valor, historico, cheque)";
 
     $sql .= " VALUES ('".$data."', '".$tipo."', '".$valor."', '".$historico."', '".$cheque."')";
 

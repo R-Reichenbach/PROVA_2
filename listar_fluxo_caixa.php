@@ -35,9 +35,9 @@
                     echo "<td>".$row['valor']."</td>";
                     echo "<td>".$row['historico']."</td>";
                     echo "<td>".$row['cheque']."</td>";
-                    echo "<td><a href='cadastro_fluxo_caixa.html?id_caixa="
+                    echo "<td><a href='altera_fluxo_caixa.php?id_caixa="
                     .$row['id_caixa']."'>Alterar</a></td>";
-                    echo "<td><a href='excluir_caixa.php?id_caixa="
+                    echo "<td><a href='excluir_fluxo_caixa.php?id_caixa="
                     .$row['id_caixa']."'>Excluir</td>";
                     echo "</tr>";
                 }while($row = mysqli_fetch_array($result))

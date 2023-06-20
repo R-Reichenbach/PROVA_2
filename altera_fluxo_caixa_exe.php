@@ -12,6 +12,7 @@
     echo "<h1>Alteração de dados</h1>";
 
         $sql = "UPDATE fluxo_caixa SET 
+            id_caixa='$id_caixa',
             data='$data',
             tipo='$tipo',
             valor='$valor',

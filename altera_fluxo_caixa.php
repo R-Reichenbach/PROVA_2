@@ -1,9 +1,10 @@
 <?php 
     include('conexao.php');
-    $id_caixa = $_GET['id_caixa'];
-    $sql = "select * from fluxo_caixa where id_usuario = $id_caixa";
+    $id_caixa = $_GET['id_caixa']; 
+    $sql = "select * from fluxo_caixa where id_caixa = $id_caixa";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

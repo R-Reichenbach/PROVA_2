@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro fluxo de caixa - IFSP</h1>
+    <form action="consulta_fluxo_caixa.php" method="POST" enctype="multipart/form-data">
+
+        <h3>Consulta fluxo de caixa</h3>
+
+    <div>
+            <h4>Tipo de consulta</h4>
+
+        <input type="radio" id="saldo_total" name="saldo" value="salto_total">
+        <label for="saldo_total">Saldo Total</label>
+        
+        <input type="radio" id="total_saidas" name="saldo" value="total_saidas">
+        <label for="total_saidas">Total Saídas</label>
+
+        <input type="radio" id="total_entradas" name="saldo" value="total_entradas">
+        <label for="total_entradas">Total Entradas</label>
+    </div>
+
+    <div>
+        <button type="submit" value="Enviar">Enviar</button>
+    </div>
+
+</form>
+</body>
+</html>
