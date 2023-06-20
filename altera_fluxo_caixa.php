@@ -1,3 +1,10 @@
+<?php 
+    include('conexao.php');
+    $id_caixa = $_GET['id_caixa'];
+    $sql = "select * from fluxo_caixa where id_usuario = $id_caixa";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +14,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Cadastro fluxo de caixa - IFSP</h1>
-    <form action="cadastro_fluxo_caixa.php" method="POST" enctype="multipart/form-data">
+    <h1>Cadastro de Usuários - IFSP</h1>
+    <form action="altera_fluxo_caixa_exe.php" method="POST" enctype="multipart/form-data">
+    <input name ="id_caixa" type="hidden" value="<?php echo $row['id_caixa']?>">
 
     <div>
         <label for="data">Data:</label>
@@ -43,8 +51,9 @@
         </select>
     </div>
 
+
     <div>
-        <button type="submit" value="Enviar">Enviar</button>
+        <button type="submit" value="Salvar">Salvar</button>
     </div>
 
 </form>
